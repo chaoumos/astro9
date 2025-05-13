@@ -1,0 +1,16 @@
+---
+// Assuming a general Layout.astro exists. 
+// If posts are in src/content/blog/, and Layout.astro is in src/layouts/, path is correct.
+import Layout from '../../layouts/Layout.astro'; 
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title || "My awesome Astro site"} description={frontmatter.description}>
+  <article class="py-8">
+    <h1 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">{frontmatter.title}</h1>
+    {frontmatter.pubDate && <p class="text-sm text-gray-500 mb-6">Published on: {new Date(frontmatter.pubDate).toLocaleDateString()}</p>}
+    {frontmatter.description && <p class="text-xl italic text-gray-600 mb-8">{frontmatter.description}</p>}
+    <div class="prose prose-lg max-w-none text-gray-800">
+      <slot /> {/* Content will be injected here */}
+    </div>
+  </article>
+</Layout>

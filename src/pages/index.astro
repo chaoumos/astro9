@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to My awesome Astro site">
+	<main class="py-8">
+		<h1 class="text-4xl font-bold mb-6 text-center text-gray-900">Welcome to <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">My awesome Astro site</span>!</h1>
+		<p class="text-lg text-gray-700 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-md shadow">
+			To get started, open the sidebar and browse around. You can find this page in <code>src/pages/index.astro</code>.
+		</p>
+		<p class="text-lg text-gray-700">
+      This is a basic Astro site configured with Tailwind CSS. Check out the <a href="/blog" class="text-blue-600 hover:underline">blog section</a> or start adding your own content!
+    </p>
+	</main>
+</Layout>
+<style>
+	/* You can add page-specific styles here, or rely on Tailwind utility classes */
+	/* Example of using theme for text-gradient if not directly done by Tailwind */
+  :root {
+    --accent-gradient: linear-gradient(45deg, rgb(var(--theme-accent-start)), rgb(var(--theme-accent-end)) 30%, white 60%);
+  }
+  /* These specific instruction styles might be better handled by Tailwind directly */
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+</style>
